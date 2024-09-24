@@ -4,34 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rock-paper-scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="game.js" defer></script>
-    <style>
-        *{
-            text-align: center;
-            margin:auto;
-            font-size:26px;
-            color:black;
-            font-family: 'Lucida Sans';
-            background-color: #FFAD60;
-        }
-        button{
-            width:250px;
-            height:100px;
-            border:2px solid white;
-            border-radius: 8px;
-            background-color: blueviolet;
-            color:white;
-            margin:8em 0 2em 0;
-            font-size: 28px;
-            padding:12px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
-    <div>
-        <button id="btn" onclick="playGame()">START GAME</button>
+    <div id="instructions">
+        Click on the options below to make your choice
     </div>
-    <div id="roundResults">Click the button to start</div>
+    <div id="gameOptions">
+        <div class="option" id="rock">
+            <img src="assets\rock.jpg" alt="rock">
+            <span>ROCK</span>
+        </div>
+        <div class="option" id="paper">
+            <img src="assets\paper.jpg" alt="paper">
+            <span>PAPER</span>
+        </div>
+        <div class="option" id="scissors">
+            <img src="assets\scissors.jpg" alt="scissors">
+            <span>SCISSORS</span>
+        </div>
+    </div>
+    <div id="results">
+        <div class="result-text">YOUR CHOICE: 
+            <span> - </span></div>
+        <div class="result-text">COMPUTER'S CHOICE: 
+            <span> - </span>
+        </div>
+        <div class="result-text">YOUR SCORE: 
+            <span> 0 </span>
+        </div>
+        <div class="result-text">COMPUTER'S SCORE: 
+            <span> 0 </span>
+        </div>
+    </div>
 </body>
 </html>

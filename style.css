@@ -1,0 +1,67 @@
+body{
+    text-align: center;
+    margin:auto;
+    color:black;
+    font-family: "Orbitron", sans-serif;
+    background-color: #C1D0B5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#instructions{
+    margin:2em;
+    font-size:28px;
+    font-weight: 500;
+}
+#gameOptions{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:3em;
+    padding:2em 0;
+}
+.option{
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    box-shadow:2px 2px 6px black;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.option:hover{
+    transform: scale(1.15);
+}
+.option img{
+    object-fit: cover;
+    width:100%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.option span{
+    display: block;
+    margin: 18px 0;
+    font-weight:500;
+}
+#results{
+    margin:4em 0;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width:50%;
+}
+.result-text{
+    flex-basis: 1;
+    width:100%;
+    padding: 18px 0 18px 6px;
+    text-align: justify;
+}
+.result-text span{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+      
