@@ -11,35 +11,44 @@
     <script src="game.js" defer></script>
 </head>
 <body>
-    <div id="instructions">
-        Click on the options below to make your choice
+    <div class="game-screen" id="game-page">
+        <div id="instructions">
+            Click on the options below to make your choice
+        </div>
+        <div id="gameOptions">
+            <div class="option">
+                <img src="assets\rock.jpg" alt="rock" id="rock">
+                <span>ROCK</span>
+            </div>
+            <div class="option">
+                <img src="assets\paper.jpg" alt="paper" id="paper">
+                <span>PAPER</span>
+            </div>
+            <div class="option" >
+                <img src="assets\scissors.jpg" alt="scissors" id="scissors">
+                <span>SCISSORS</span>
+            </div>
+        </div>
+        <div id="results">
+            <div class="result-text">YOUR CHOICE: 
+                <span id="humanOptionSelected"> - </span></div>
+            <div class="result-text">COMPUTER'S CHOICE: 
+                <span id="computerOptionSelected"> - </span>
+            </div>
+            <div class="result-text">YOUR SCORE: 
+                <span id="humanCurrentScore"> 0 </span>
+            </div>
+            <div class="result-text">COMPUTER'S SCORE: 
+                <span id="computerCurrentScore"> 0 </span>
+            </div>
+            <div class="result-text"> 
+                <span id="roundMessage"> </span>
+            </div>
+        </div>
     </div>
-    <div id="gameOptions">
-        <div class="option">
-            <img src="assets\rock.jpg" alt="rock" id="rock">
-            <span>ROCK</span>
-        </div>
-        <div class="option">
-            <img src="assets\paper.jpg" alt="paper" id="paper">
-            <span>PAPER</span>
-        </div>
-        <div class="option" >
-            <img src="assets\scissors.jpg" alt="scissors" id="scissors">
-            <span>SCISSORS</span>
-        </div>
-    </div>
-    <div id="results">
-        <div class="result-text">YOUR CHOICE: 
-            <span> - </span></div>
-        <div class="result-text">COMPUTER'S CHOICE: 
-            <span> - </span>
-        </div>
-        <div class="result-text">YOUR SCORE: 
-            <span> 0 </span>
-        </div>
-        <div class="result-text">COMPUTER'S SCORE: 
-            <span> 0 </span>
-        </div>
+    <div id="winner-page" class="hide-content">
+        <div id="winner">HEYYY</div>
+        <button id="play-again-btn">Play Again</button>
     </div>
 </body>
 </html>

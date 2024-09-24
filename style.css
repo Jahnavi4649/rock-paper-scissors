@@ -1,4 +1,11 @@
 body{
+    margin:0;
+    background-color: #C1D0B5;
+}
+.hide-content{
+    display:none;
+}
+.game-screen{
     text-align: center;
     margin:auto;
     color:black;
@@ -10,8 +17,13 @@ body{
 }
 #instructions{
     margin:2em;
-    font-size:28px;
+    font-size:30px;
     font-weight: 500;
+}
+#winner{
+    margin:4em 0 2em 0;
+    font-size:36px;
+    font-weight: 800;
 }
 #gameOptions{
     display:flex;
@@ -60,8 +72,26 @@ body{
     text-align: justify;
 }
 .result-text span{
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 600;
 }
-
+#play-again-btn{
+    border:none;
+    box-shadow: 2px 2px 6px black;
+    border-radius: 8px;
+    padding:10px 18px;
+    margin:2em 0;
+    width:250px;
+    height:100px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color:white;
+    background-color: #F9B572;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+#play-again-btn:hover{
+    transform: scale(1.2);
+}
       

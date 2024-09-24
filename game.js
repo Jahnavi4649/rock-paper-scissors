@@ -11,12 +11,6 @@ rock.addEventListener("click", playGame);
 paper.addEventListener("click", playGame);
 scissors.addEventListener("click", playGame);
 
-//funcion to get user input through prompt
-function getHumanChoice(){
-    let input = prompt("Enter your choice: rock / paper / scissors");
-    return input.toLowerCase() ;
-}
-
 // function to get computer input through Math.random()
 function getComputerChoice(){
     let choice =Math.floor(Math.random() * gameOptions.length ) ; 
@@ -63,17 +57,54 @@ function playRound(humanChoice, computerChoice) {
     return message;
 }
 
-//function to decide final winner and calls all other functions for 5 times(since the game contains 5 rounds) 
+const gamePage = document.getElementById("game-page");
+const winnerPage = document.getElementById("winner-page");
+const winner =document.getElementById("winner");
 function playGame(e){
     console.log(e);
     const humanSelection = e.target.id;
     const computerSelection = getComputerChoice();
-    console.log("comp: "+computerSelection);
-    console.log("human: "+humanSelection);
-    
+
+    const humanOptionSelected = document.getElementById("humanOptionSelected");
+    humanOptionSelected.textContent = humanSelection;
+
+    const computerOptionSelected = document.getElementById("computerOptionSelected");
+    computerOptionSelected.textContent = computerSelection;
 
     let roundMessage = playRound(humanSelection, computerSelection);
-    console.log(roundMessage);
-    console.log("computer score: "+ computerScore +", human score: "+humanScore);   
+    
+    const messageElement = document.getElementById("roundMessage");
+    messageElement.textContent = roundMessage.toUpperCase();
+
+    const humanCurrentScore = document.getElementById("humanCurrentScore");
+    humanCurrentScore.textContent = humanScore;
+
+    const computerCurrentScore = document.getElementById("computerCurrentScore");
+    computerCurrentScore.textContent = computerScore;
+
+    if(humanScore == 5){
+        winnerPage.classList.add("game-screen");
+        winnerPage.classList.remove("hide-content");
+        gamePage.classList.add("hide-content");
+        gamePage.classList.remove("game-screen");
+        winner.textContent = "CONGRATS! YOU WIN";
+    }
+    if(computerScore == 5){
+        winnerPage.classList.add("game-screen");
+        winnerPage.classList.remove("hide-content");
+        gamePage.classList.add("hide-content");
+        gamePage.classList.remove("game-screen");
+        winner.textContent = "UH-OH! YOU LOSE";
+    }
 }
+
+const playAgainBtn = document.getElementById("play-again-btn");
+playAgainBtn.addEventListener('click', function() {
+    location.reload();
+  });
+    
+
+
+
+
 
