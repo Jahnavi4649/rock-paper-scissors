@@ -7,7 +7,9 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 
-rock.addEventListener("click", playGame())
+rock.addEventListener("click", playGame);
+paper.addEventListener("click", playGame);
+scissors.addEventListener("click", playGame);
 
 //funcion to get user input through prompt
 function getHumanChoice(){
@@ -62,40 +64,16 @@ function playRound(humanChoice, computerChoice) {
 }
 
 //function to decide final winner and calls all other functions for 5 times(since the game contains 5 rounds) 
-// function playGame(){
+function playGame(e){
+    console.log(e);
+    const humanSelection = e.target.id;
+    const computerSelection = getComputerChoice();
+    console.log("comp: "+computerSelection);
+    console.log("human: "+humanSelection);
+    
 
-//     //loop for calling all functions for 5 times
-//     for(let i=0; i<5; i++){
-//         const humanSelection = getHumanChoice();
-//         if(humanSelection == "rock" || humanSelection == "paper" || humanSelection == "scissors"){
-//             const computerSelection = getComputerChoice();
-//             console.log("comp: "+computerSelection);
-//             console.log("human: "+humanSelection);
-
-//             let roundMessage = playRound(humanSelection, computerSelection);
-//             console.log(roundMessage);
-//             console.log("computer score: "+ computerScore +", human score: "+humanScore);
-
-//             alert("Round: "+ (i+1) + "\nYour Choice: "+humanSelection +", Computer Choice: "+ computerSelection +"\nResult: "+roundMessage +"\nHuman Score: "+humanScore +", Computer Score: "+computerScore+" ");
-//         }
-
-//         else{
-//             alert("Looks like the value you entered is incorrect. Please enter the right values");
-//             i--;
-//         }
-        
-//     }
-
-//     //declaring the highest scorer after 5 rounds as winner
-//     if(humanScore > computerScore){
-//         document.getElementById("roundResults").innerText = ` Congrats! You Win!!`;
-//     }
-//     else if(humanScore == computerScore){
-//         document.getElementById("roundResults").innerText = ` Uh-oh! It's a tie.`;
-//     }
-//     else{
-//         document.getElementById("roundResults").innerText = `Oops! You Lose!!`;
-//     }
-//     document.getElementById("btn").innerText = `Play Again`;
-// }
+    let roundMessage = playRound(humanSelection, computerSelection);
+    console.log(roundMessage);
+    console.log("computer score: "+ computerScore +", human score: "+humanScore);   
+}
 
